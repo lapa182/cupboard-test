@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "editor.formatOnSave": false,
+  "git.ignoreLimitWarning": true,
+  "typescript.validate.enable": false,
+  "tslint.jsEnable": false,
+  "[json]": {
+    "editor.formatOnSave": false
+  },
+}
