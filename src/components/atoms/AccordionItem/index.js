@@ -12,7 +12,7 @@ class AccordionItem extends React.Component {
   }
 
   triggerAccordion(event) {
-    if (event.key === "enter") {
+    if (event.key === "enter" || event.type === "click") {
       this.setState(prevState => ({ active: !prevState.active }));
     }
   }

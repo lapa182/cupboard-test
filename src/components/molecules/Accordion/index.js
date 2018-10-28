@@ -1,7 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import AccordionItem from "components/atoms/AccordionItem";
-import "./Accordion.module.scss";
 
 const Accordion = ({ products }) => (
   <div className="section">
