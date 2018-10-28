@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import renderer from "react-test-renderer";
 import Input from "./index";
 
-describe("Picture", () => {
+describe("Input", () => {
   it("renders without crashing", () => {
-    const picture = document.createElement("input");
-    ReactDOM.render(<Input />, Input);
-    ReactDOM.unmountComponentAtNode(picture);
+    const input = renderer.create(<Input />).toJSON();
+    expect(input).toMatchSnapshot();
   });
 });

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders without crashing 1`] = `
+<div
+  className="field"
+>
+  <div
+    className="control"
+  >
+    <input
+      aria-label="Filter value"
+      className="input"
+      placeholder="Filter value"
+      type="text"
+    />
+  </div>
+</div>
+`;
