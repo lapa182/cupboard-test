@@ -14,6 +14,8 @@ export default function productsReducer(state = initialState.products, action) {
         list: action.list,
         loading: false
       };
+    case types.FILTER_PRODUCTS:
+      return state.list.filter(data => data.id === action.id);
     default:
       return state;
   }

@@ -10,6 +10,7 @@ import configureStore from "./store";
 import "./index.scss";
 
 const store = configureStore();
+
 store.dispatch(loadCategories());
 store.dispatch(loadProducts());
 

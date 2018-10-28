@@ -7,3 +7,7 @@ export function loadProductsSuccess(list) {
 export function productsLoading(isLoading = true) {
   return { type: types.PRODUCTS_LOADING, isLoading };
 }
+
+export function productsFilter(isLoading = true) {
+  return { type: types.FILTER_PRODUCTS, isLoading };
+}
