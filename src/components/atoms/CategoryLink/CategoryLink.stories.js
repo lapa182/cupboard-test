@@ -3,7 +3,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
-import Link from ".";
+import CategoryLink from ".";
 
 const link = text("Link", "#wine");
 const withPreventDefault = handler => e => {
@@ -11,10 +11,13 @@ const withPreventDefault = handler => e => {
   handler(e);
 };
 
-storiesOf("Link", module)
+storiesOf("CategoryLink", module)
   .addDecorator(withKnobs)
   .add("default", () => (
-    <Link href={link} onClick={withPreventDefault(action("link-click"))}>
+    <CategoryLink
+      href={link}
+      onClick={withPreventDefault(action("link-click"))}
+    >
       Wine
-    </Link>
+    </CategoryLink>
   ));

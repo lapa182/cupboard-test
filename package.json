@@ -14,13 +14,16 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
+    "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-hot-loader": "^4.3.11",
     "react-redux": "^5.1.0",
     "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5",
     "redux-immutable-state-invariant": "^2.1.0",
-    "redux-thunk": "^2.3.0",
-    "prop-types": "^15.6.2"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -64,7 +67,6 @@
     "prettier": "1.14.3",
     "prettier-eslint": "^8.8.2",
     "react-test-renderer": "^16.6.0",
-    "redux-devtools-extension": "^2.13.5",
     "regenerator-runtime": "^0.12.1",
     "sass-loader": "^7.1.0",
     "storybook-readme": "^4.0.2",

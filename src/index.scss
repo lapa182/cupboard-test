@@ -1,2 +1,10 @@
 @import "~bulma/bulma";
 @import "globals/variables";
+
+.tabs {
+  ul {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

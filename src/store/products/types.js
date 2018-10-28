@@ -1,0 +1,2 @@
+export const PRODUCTS_LOADING = "PRODUCTS_LOADING";
+export const LOAD_PRODUCTS = "LOAD_PRODUCTS";

@@ -1,17 +1,14 @@
 import initialState from "../initialState";
 import * as types from "./types";
 
-export default function categoriesReducer(
-  state = initialState.categories,
-  action
-) {
+export default function productsReducer(state = initialState.products, action) {
   switch (action.type) {
-    case types.CATEGORIES_LOADING:
+    case types.PRODUCTS_LOADING:
       return {
         ...state,
         loading: action.isLoading
       };
-    case types.LOAD_CATEGORIES:
+    case types.LOAD_PRODUCTS:
       return {
         ...state,
         list: action.list,
