@@ -5,7 +5,7 @@
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "git.ignoreLimitWarning": true,
   "typescript.validate.enable": false,
   "tslint.jsEnable": false,

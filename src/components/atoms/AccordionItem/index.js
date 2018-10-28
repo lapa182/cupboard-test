@@ -3,36 +3,43 @@ import PropTypes from "prop-types";
 import styles from "./AccordionItem.module.scss";
 
 class AccordionItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            active: false
-        };
-        this._handleClick = this._handleClick.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false
+    };
+    this.triggerAccordion = this.triggerAccordion.bind(this);
+  }
 
-    _handleClick() {
-        this.setState({
-            active: !this.state.active,
-            className: "active"
-        });
+  triggerAccordion(event) {
+    if (event.key === "enter") {
+      this.setState(prevState => ({ active: !prevState.active }));
     }
+  }
 
-    render() {
-        const activeClass = this.state.active ? styles.active : "";
+  render() {
+    const { active } = this.state;
+    const { title, description } = this.props;
+    const activeClass = active ? styles.active : "";
 
-        return (
-            <div className={styles.item + ' ' + activeClass} onClick={this._handleClick}>
-                <h3>{this.props.title}</h3>
-                <p>{this.props.description}</p>
-            </div>
-        )
-    }
+    return (
+      <div
+        role="tab"
+        tabIndex="0"
+        className={`${styles.item} ${activeClass}`}
+        onKeyPress={this.triggerAccordion}
+        onClick={this.triggerAccordion}
+      >
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    );
+  }
 }
 
 AccordionItem.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-}
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
 
 export default AccordionItem;
