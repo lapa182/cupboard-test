@@ -1,6 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import "./Input.module.scss";
 
 const Input = ({ placeholder }) => (
   <div className="field">
