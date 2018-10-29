@@ -1,3 +1,5 @@
+require("@babel/polyfill");
+
 // A bit Extracted from Create-React-App
 
 const path = require("path");
@@ -17,7 +19,7 @@ const cssModuleRegex = /\.module\.css$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/index.js"),
+  entry: ["@babel/polyfill", path.resolve(__dirname, "src/index.js")],
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "index.js"

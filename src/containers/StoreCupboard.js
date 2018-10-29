@@ -40,7 +40,7 @@ class StoreCupboard extends React.Component {
         {loading ? (
           <div>Loading</div>
         ) : (
-          <main className="container">
+          <div className="container">
             <section className="columns is-vcentered">
               <header className="column is-2">
                 <h1>Store Cupboard</h1>
@@ -54,7 +54,7 @@ class StoreCupboard extends React.Component {
             </section>
             <section className="columns">
               <div className="column is-5">
-                <Input onKeyUp={event => this.filterByKeyword(event)} />
+                <Input onKeyPress={event => this.filterByKeyword(event)} />
               </div>
             </section>
             <section className="columns">
@@ -62,7 +62,7 @@ class StoreCupboard extends React.Component {
                 {products && <Accordion products={products} />}
               </div>
             </section>
-          </main>
+          </div>
         )}
       </div>
     );

@@ -12,6 +12,7 @@
   "author": "Igo Lapa <igorodrigueslapa@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
     "prop-types": "^15.6.2",

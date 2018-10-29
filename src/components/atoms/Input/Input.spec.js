@@ -4,7 +4,7 @@ import Input from "./index";
 
 describe("Input", () => {
   it("renders without crashing", () => {
-    const input = renderer.create(<Input onKeyUp={() => {}} />).toJSON();
+    const input = renderer.create(<Input onKeyPress={() => {}} />).toJSON();
     expect(input).toMatchSnapshot();
   });
 });

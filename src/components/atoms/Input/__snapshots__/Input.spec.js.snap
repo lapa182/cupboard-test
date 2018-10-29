@@ -10,7 +10,7 @@ exports[`Input renders without crashing 1`] = `
     <input
       aria-label="Filter value"
       className="input"
-      onKeyUp={[Function]}
+      onKeyPress={[Function]}
       placeholder="Filter value"
       type="text"
     />
