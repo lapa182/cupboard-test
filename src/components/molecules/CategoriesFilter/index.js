@@ -19,7 +19,7 @@ class CategoriesFilter extends React.Component {
     return (
       <nav className="tabs">
         <ul>
-          {categories.map(data => (
+          {categories.filter(data => data.hidden === false).map(data => (
             <li key={data.id}>
               <CategoryLink
                 {...data}
