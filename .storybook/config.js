@@ -5,9 +5,11 @@ import "../src/index.scss";
 
 const req = require.context("../src/components", true, /\.stories\.js$/);
 
-addDecorator(withInfo({
-  inline: true
-}));
+addDecorator(
+  withInfo({
+    inline: true
+  })
+);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));

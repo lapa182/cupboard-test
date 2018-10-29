@@ -2,7 +2,16 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, object } from "@storybook/addon-knobs";
+import { Provider as ReduxProvider } from "react-redux";
 import CategoriesFilter from ".";
+
+import configureStore from "../../../store";
+
+let store = configureStore();
+
+export default function Provider({ story }) {
+  return <ReduxProvider store={store}>{story}</ReduxProvider>;
+}
 
 const response = object("Categories", {
   data: [
@@ -210,5 +219,11 @@ const response = object("Categories", {
 });
 
 storiesOf("CategoriesFilter", module)
+  .addDecorator(story => <Provider story={story()} />)
   .addDecorator(withKnobs)
-  .add("default", () => <CategoriesFilter categories={response.data} />);
+  .add("default", () => (
+    <CategoriesFilter
+      categories={response.data}
+      selectedCategory="48dc8dc2-27da-11e6-9902-026e15ef4a55"
+    />
+  ));
