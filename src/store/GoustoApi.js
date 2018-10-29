@@ -1,4 +1,4 @@
 import { loadProducts, filterProducts } from "./products";
-import loadCategories from "./categories";
+import { loadCategories, filterCategory } from "./categories";
 
-export { loadProducts, loadCategories, filterProducts };
+export { loadProducts, loadCategories, filterProducts, filterCategory };

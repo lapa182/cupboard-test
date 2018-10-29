@@ -7,3 +7,7 @@ export function loadCategoriesSuccess(list) {
 export function categoriesLoading(isLoading = true) {
   return { type: types.CATEGORIES_LOADING, isLoading };
 }
+
+export function categoriesFilter(id) {
+  return { type: types.SELECTED_CATEGORY, id };
+}

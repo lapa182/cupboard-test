@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import CategoriesFilter from "components/molecules/CategoriesFilter";
 import Accordion from "components/molecules/Accordion";
-import makeProductsByCategory from "../store/selectors";
+import Input from "components/atoms/Input";
+import { makeProductsByCategory } from "../store/selectors";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class App extends React.Component {
     this.state = {
       productsFiltered: products
     };
+  }
+
+  filterProducts(event) {
+    dispatch(filterProducts(id));
   }
 
   render() {
@@ -33,6 +38,11 @@ class App extends React.Component {
               </article>
             </section>
             <section className="columns">
+              <div className="column is-5">
+                <Input onKeyUp={this.filterProducts} />
+              </div>
+            </section>
+            <section className="columns">
               <div className="column">
                 {products && <Accordion products={products} />}
               </div>
@@ -46,10 +56,10 @@ class App extends React.Component {
 
 const makeMapStateToProps = () => {
   const getProductsByCategory = makeProductsByCategory();
-  const mapStateToProps = (state, ownProps) => ({
+  const mapStateToProps = state => ({
     categories: state.categories.list.data,
     loading: state.categories.loading,
-    products: getProductsByCategory(state, ownProps)
+    products: getProductsByCategory(state)
   });
   return mapStateToProps;
 };

@@ -17,6 +17,11 @@ export default function categoriesReducer(
         list: action.list,
         loading: false
       };
+    case types.SELECTED_CATEGORY:
+      return {
+        ...state,
+        selectedCategory: action.id
+      };
     default:
       return state;
   }

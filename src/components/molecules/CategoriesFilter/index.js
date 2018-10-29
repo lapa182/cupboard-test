@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import CategoryLink from "components/atoms/CategoryLink";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { filterProducts } from "../../../store/GoustoApi";
+import { filterCategory } from "../../../store/GoustoApi";
 
 class CategoriesFilter extends React.Component {
   filterCategory(event, id) {
     event.preventDefault();
     const { dispatch } = this.props;
 
-    dispatch(filterProducts(id));
+    dispatch(filterCategory(id));
 
     // const filteredValue = categories.filter(category => category.id === id);
 
@@ -46,6 +46,6 @@ CategoriesFilter.propTypes = {
 };
 
 const mapDispatchToProps = () => dispatch =>
-  bindActionCreators({ filterProducts }, dispatch);
+  bindActionCreators({ filterCategory }, dispatch);
 
 export default connect(mapDispatchToProps)(CategoriesFilter);

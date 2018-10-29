@@ -14,4 +14,8 @@ const loadCategories = () => dispatch => {
     });
 };
 
-export default loadCategories;
+const filterCategory = id => dispatch => {
+  dispatch(actions.categoriesFilter(id));
+};
+
+export { loadCategories, filterCategory };

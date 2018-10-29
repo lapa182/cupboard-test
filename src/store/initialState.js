@@ -1,11 +1,12 @@
 export default {
   categories: {
     loading: false,
-    list: []
+    list: [],
+    selectedCategory: ""
   },
   products: {
     loading: false,
     list: [],
-    selectedCategory: ""
+    keyword: ""
   }
 };
