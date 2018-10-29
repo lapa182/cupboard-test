@@ -8,6 +8,6 @@ export function productsLoading(isLoading = true) {
   return { type: types.PRODUCTS_LOADING, isLoading };
 }
 
-export function productsFilter(isLoading = true) {
-  return { type: types.FILTER_PRODUCTS, isLoading };
+export function productsFilter(id) {
+  return { type: types.FILTER_PRODUCTS, id };
 }

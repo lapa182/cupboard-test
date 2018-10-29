@@ -5,6 +5,7 @@ export default {
   },
   products: {
     loading: false,
-    list: []
+    list: [],
+    selectedCategory: ""
   }
 };

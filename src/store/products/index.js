@@ -16,4 +16,8 @@ const loadProducts = () => dispatch => {
     });
 };
 
-export default loadProducts;
+const filterProducts = id => dispatch => {
+  dispatch(actions.productsFilter(id));
+};
+
+export { loadProducts, filterProducts };

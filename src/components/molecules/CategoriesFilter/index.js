@@ -1,37 +1,31 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import CategoryLink from "components/atoms/CategoryLink";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { filterProducts } from "../../../store/GoustoApi";
 
 class CategoriesFilter extends React.Component {
-  constructor(props) {
-    super(props);
-    const { categories } = this.props;
-
-    this.state = {
-      categoryDisplayed: categories
-    };
-
-    this.filterCategory = this.filterCategory.bind(this);
-  }
-
   filterCategory(event, id) {
     event.preventDefault();
-    const { categories } = this.props;
+    const { dispatch } = this.props;
 
-    const filteredValue = categories.filter(category => category.id === id);
+    dispatch(filterProducts(id));
 
-    this.setState({
-      categoryDisplayed: filteredValue
-    });
+    // const filteredValue = categories.filter(category => category.id === id);
+
+    // this.setState({
+    //   categoryDisplayed: filteredValue
+    // });
   }
 
   render() {
-    const { categoryDisplayed } = this.state;
+    const { categories } = this.props;
 
     return (
       <nav className="tabs">
         <ul>
-          {categoryDisplayed.filter(data => data.hidden === false).map(data => (
+          {categories.map(data => (
             <li key={data.id}>
               <CategoryLink
                 {...data}
@@ -51,4 +45,7 @@ CategoriesFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
-export default CategoriesFilter;
+const mapDispatchToProps = () => dispatch =>
+  bindActionCreators({ filterProducts }, dispatch);
+
+export default connect(mapDispatchToProps)(CategoriesFilter);
