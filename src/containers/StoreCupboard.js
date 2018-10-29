@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import CategoriesFilter from "components/molecules/CategoriesFilter";
 import Accordion from "components/molecules/Accordion";
 import Input from "components/atoms/Input";
+import PropTypes from "prop-types";
 import makeProductsByCategory from "../store/selectors";
 import { filterProducts } from "../store/GoustoApi";
 
@@ -24,7 +25,7 @@ function debounce(a, b, c) {
   };
 }
 
-class App extends React.Component {
+class StoreCupboard extends React.Component {
   filterByKeyword(event) {
     const { dispatch } = this.props;
 
@@ -68,6 +69,17 @@ class App extends React.Component {
   }
 }
 
+StoreCupboard.propTypes = {
+  categories: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  loading: PropTypes.bool.isRequired,
+  products: PropTypes.oneOfType([PropTypes.array]),
+  dispatch: PropTypes.func.isRequired
+};
+
+StoreCupboard.defaultProps = {
+  products: []
+};
+
 const makeMapStateToProps = () => {
   const getProductsByCategory = makeProductsByCategory();
   const mapStateToProps = state => ({
@@ -78,4 +90,4 @@ const makeMapStateToProps = () => {
   return mapStateToProps;
 };
 
-export default connect(makeMapStateToProps)(App);
+export default connect(makeMapStateToProps)(StoreCupboard);

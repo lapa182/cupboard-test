@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { loadCategories, loadProducts } from "./store/GoustoApi";
-import App from "./containers/App";
+import StoreCupboard from "./containers/StoreCupboard";
 
 // Redux Store
 import configureStore from "./store";
@@ -17,7 +17,7 @@ store.dispatch(loadProducts());
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <StoreCupboard />
     </Router>
   </Provider>,
   document.getElementById("root")
