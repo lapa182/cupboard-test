@@ -14,13 +14,16 @@ class CategoriesFilter extends React.Component {
   }
 
   render() {
-    const { categories } = this.props;
+    const { categories, selectedCategory } = this.props;
 
     return (
       <nav className="tabs">
         <ul>
           {categories.filter(data => data.hidden === false).map(data => (
-            <li key={data.id}>
+            <li
+              className={selectedCategory === data.id ? "is-active" : ""}
+              key={data.id}
+            >
               <CategoryLink
                 {...data}
                 onClick={event => this.filterCategory(event, data.id)}

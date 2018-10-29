@@ -45,7 +45,10 @@ class App extends React.Component {
                 <h1>Store Cupboard</h1>
               </header>
               <article className="column is-10">
-                <CategoriesFilter categories={categories} />
+                <CategoriesFilter
+                  categories={categories.list.data}
+                  selectedCategory={categories.selectedCategory}
+                />
               </article>
             </section>
             <section className="columns">
@@ -68,7 +71,7 @@ class App extends React.Component {
 const makeMapStateToProps = () => {
   const getProductsByCategory = makeProductsByCategory();
   const mapStateToProps = state => ({
-    categories: state.categories.list.data,
+    categories: state.categories,
     loading: state.categories.loading,
     products: getProductsByCategory(state)
   });
