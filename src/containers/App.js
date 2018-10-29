@@ -3,24 +3,35 @@ import { connect } from "react-redux";
 import CategoriesFilter from "components/molecules/CategoriesFilter";
 import Accordion from "components/molecules/Accordion";
 import Input from "components/atoms/Input";
-import { makeProductsByCategory } from "../store/selectors";
+import makeProductsByCategory from "../store/selectors";
+import { filterProducts } from "../store/GoustoApi";
+
+// Simple function to debounce
+// https://toughcompetent.com/blog/es5-es6-debounce-react-events-on-inputs/
+function debounce(a, b, c) {
+  let d;
+  let e;
+  return function() {
+    function h() {
+      (d = null), c || (e = a.apply(f, g));
+    }
+    var f = this;
+
+    var g = arguments;
+    return (
+      clearTimeout(d), (d = setTimeout(h, b)), c && !d && (e = a.apply(f, g)), e
+    );
+  };
+}
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    const { products } = this.props;
+  filterByKeyword(event) {
+    const { dispatch } = this.props;
 
-    this.state = {
-      productsFiltered: products
-    };
-  }
-
-  filterProducts(event) {
-    dispatch(filterProducts(id));
+    debounce(dispatch(filterProducts(event.target.value)), 500);
   }
 
   render() {
-    const { productsFiltered } = this.state;
     const { categories, loading, products } = this.props;
 
     return (
@@ -39,7 +50,7 @@ class App extends React.Component {
             </section>
             <section className="columns">
               <div className="column is-5">
-                <Input onKeyUp={this.filterProducts} />
+                <Input onKeyUp={event => this.filterByKeyword(event)} />
               </div>
             </section>
             <section className="columns">

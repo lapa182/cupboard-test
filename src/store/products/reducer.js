@@ -17,7 +17,7 @@ export default function productsReducer(state = initialState.products, action) {
     case types.FILTER_PRODUCTS:
       return {
         ...state,
-        selectedCategory: action.id
+        keyword: action.keyword
       };
     default:
       return state;

@@ -16,8 +16,8 @@ const loadProducts = () => dispatch => {
     });
 };
 
-const filterProducts = id => dispatch => {
-  dispatch(actions.productsFilter(id));
+const filterProducts = keyword => dispatch => {
+  dispatch(actions.productsFilter(keyword));
 };
 
 export { loadProducts, filterProducts };

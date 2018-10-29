@@ -11,12 +11,6 @@ class CategoriesFilter extends React.Component {
     const { dispatch } = this.props;
 
     dispatch(filterCategory(id));
-
-    // const filteredValue = categories.filter(category => category.id === id);
-
-    // this.setState({
-    //   categoryDisplayed: filteredValue
-    // });
   }
 
   render() {
