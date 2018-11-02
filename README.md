@@ -1,4 +1,4 @@
-# Gousto Front-End test
+# Cupboard Test
 
 #### Author: Igo Lapa
 
